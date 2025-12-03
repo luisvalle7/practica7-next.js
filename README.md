@@ -1,6 +1,5 @@
 # Practica 7 - Fundamentos de Next.js
 
-Bueno, mi docente dejo esta practica de Next.js y estoy haciendola. La voy a dividir en varias partes para aprender paso a paso y entenderla mejor.
 
 ## Parte 1 - Setup inicial (rama chapter-1)
 
@@ -23,7 +22,7 @@ Lo que aprendi hasta ahora:
 
 ## Como correr esto
 
-Si queres probar el proyecto:
+Si quieres probar el proyecto:
 ```bash
 git clone https://github.com/luisvalle7/practica7-next.js.git
 cd practica7-next.js
