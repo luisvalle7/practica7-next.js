@@ -1,218 +1,115 @@
-# Práctica 7: Fundamentos de Next.js
+# Practica 7 - Fundamentos de Next.js
 
-Este repositorio contiene una guía completa paso a paso para aprender los fundamentos de **Next.js**, un framework de React para construcción de aplicaciones web modernas. La práctica se divide en **3 capítulos** progresivos, cada uno en su propia rama de Git.
+Bueno, aca esta mi tarea sobre Next.js. La hice en tres partes (ramas diferentes) para ir aprendiendo paso a paso.
 
-## 📋 Estructura del Proyecto
+## Que hice
 
-El proyecto está organizado en ramas de Git, donde cada rama representa un capítulo de la práctica:
+Basicamente cree un proyecto con Next.js para entender como funciona todo. Lo que mas me interesaba era ver como Next.js maneja las rutas automaticamente y las diferentes formas de renderizar contenido.
 
-```
-main (rama principal)
-├── chapter-1: Configuración inicial de Next.js
-├── chapter-2: Rutas y navegación
-└── chapter-3: SSR, SSG e interactividad
-```
+## Las tres partes
 
-## 📚 Capítulos
+### Parte 1 - Setup inicial (rama chapter-1)
 
-### Capítulo 1: Configuración del proyecto Next.js
-**Rama**: `chapter-1`
+Al principio instale Next.js usando create-next-app y configure todo lo basico. Modifique la pagina inicial para que sea mas simple y pueda ver bien como funciona.
 
-En este capítulo aprendemos:
-- Crear un proyecto Next.js usando `create-next-app`
-- Estructura básica del proyecto (carpetas `pages/`, `public/`, `styles/`)
-- Rutas automáticas basadas en la estructura de carpetas
-- Renderizado de una página inicial simple
+Lo que hice:
+- Cree el proyecto con create-next-app
+- Simplifique la pagina index.js para que tenga solo lo esencial
+- Entendi como Next.js genera las rutas automaticamente
 
-**Archivos principales**: `pages/index.js`
+Archivos importantes: pages/index.js
 
-[Ver detalles del Capítulo 1](CHAPTER_1.md)
+### Parte 2 - Rutas y navegacion (rama chapter-2)
 
----
+Aqui agregue una segunda pagina y aprendi a navegar entre ellas sin recargar toda la pagina. El componente Link de Next.js es bastante util para esto.
 
-### Capítulo 2: Rutas y navegación
-**Rama**: `chapter-2`
+Lo que hice:
+- Cree la pagina about.js
+- Agregue un Link en la pagina principal para ir a about
+- Vi como funciona la navegacion del lado del cliente
 
-En este capítulo aprendemos:
-- Crear múltiples páginas (archivo `about.js`)
-- Enrutamiento automático en Next.js
-- Usar el componente `<Link>` para navegación sin recargas
-- Navegar entre páginas de forma eficiente
+Archivos importantes: pages/about.js, pages/index.js con Link
 
-**Archivos principales**: `pages/index.js`, `pages/about.js`
+### Parte 3 - Diferentes formas de renderizar (rama chapter-3)
 
-[Ver detalles del Capítulo 2](CHAPTER_2.md)
+Esta es la parte mas interesante. Aprendi que Next.js puede renderizar de diferentes formas y cada una sirve para casos distintos.
 
----
+Lo que implementé:
 
-### Capítulo 3: SSR, SSG e interactividad
-**Rama**: `chapter-3`
+**SSR (getServerSideProps)** - Archivo: pages/ssr-example.js
+- Esto genera la pagina en el servidor cada vez que alguien la pide
+- Buen para contenido que cambia seguido o cosas personalizadas por usuario
+- Aprendi como usar la funcion getServerSideProps
 
-En este capítulo implementamos:
-- **SSR (Server-Side Rendering)**: Renderizado en servidor para contenido dinámico (`pages/ssr-example.js`)
-- **SSG (Static Site Generation)**: Generación estática en compilación (`pages/ssg-example.js`)
-- **CSR (Client-Side Rendering)**: Interactividad con React hooks (`pages/counter.js`)
+**SSG (getStaticProps)** - Archivo: pages/ssg-example.js
+- Esto genera la pagina una sola vez cuando compilas el proyecto
+- Es mas rapido para el usuario porque la pagina ya esta lista
+- Buen para cosas que no cambian, como un blog
 
-**Archivos principales**: 
-- `pages/ssr-example.js` - Renderizado en servidor
-- `pages/ssg-example.js` - Generación estática
-- `pages/counter.js` - Componente interactivo
+**Interactividad con React** - Archivo: pages/counter.js
+- Hice un contador simple que sube cuando clickeas un boton
+- Use el hook useState para manejar el estado
+- Esto se renderiza en el navegador, no en el servidor
 
-[Ver detalles del Capítulo 3](CHAPTER_3.md)
+## Como ejecutar esto
 
----
-
-## 🚀 Cómo ejecutar el proyecto
-
-### Requisitos previos
-
-- Node.js (versión 18.0 o superior)
+Necesitas:
+- Node.js instalado
 - npm o yarn
-- Git
 
-### Instalación y ejecución
-
-1. **Clonar el repositorio**:
+Pasos:
 ```bash
 git clone https://github.com/luisvalle7/practica7-next.js.git
 cd practica7-next.js
-```
-
-2. **Cambiar a una rama específica** (opcional):
-```bash
-# Ver todas las ramas
-git branch -a
-
-# Cambiar a la rama que deseas (ejemplo: chapter-1)
-git checkout chapter-1
-```
-
-3. **Instalar dependencias**:
-```bash
 npm install
-```
-
-4. **Ejecutar el servidor de desarrollo**:
-```bash
 npm run dev
 ```
 
-5. **Abrir en el navegador**:
-```
-http://localhost:3000
-```
+Despues abri http://localhost:3000 en el navegador
 
-### Compilación para producción
+## Lo que aprendi
 
-```bash
-npm run build
-npm run start
-```
+- Como Next.js maneja las rutas automaticamente (basado en la carpeta pages/)
+- Diferencia entre SSR y SSG y cuando usar cada uno
+- Como usar el componente Link para navegacion eficiente
+- Como manejar estado con React hooks (useState)
+- A trabajar con ramas en Git
+- Como getServerSideProps y getStaticProps funcionan en Next.js
 
----
-
-## 📖 Conceptos clave aprendidos
-
-### 1. Rutas automáticas
-Cualquier archivo `.js` en la carpeta `pages/` se convierte automáticamente en una ruta:
-- `pages/index.js` → `/`
-- `pages/about.js` → `/about`
-- `pages/ssr-example.js` → `/ssr-example`
-
-### 2. Renderizado híbrido
-
-| Tipo | Función | Cuándo | Caso de uso |
-|------|---------|--------|------------|
-| **SSR** | `getServerSideProps()` | Cada request | Datos dinámicos, personalizados |
-| **SSG** | `getStaticProps()` | En compilación | Contenido estático, blogs |
-| **CSR** | `useState()` en componentes | En el cliente | Interactividad, UI dinámica |
-
-### 3. Componente Link
-Permite navegación del lado del cliente sin recargas completas:
-```jsx
-import Link from 'next/link';
-
-<Link href="/about">
-  <a>Ir a Acerca de</a>
-</Link>
-```
-
-### 4. React Hooks
-Ejemplo con `useState`:
-```jsx
-import { useState } from 'react';
-
-const [count, setCount] = useState(0);
-```
-
----
-
-## 📁 Estructura del directorio actual
+## Estructura
 
 ```
 practica7-next.js/
 ├── pages/
-│   ├── index.js           # Página inicial
-│   ├── about.js           # Página Acerca de
-│   ├── ssr-example.js     # Ejemplo de SSR
-│   ├── ssg-example.js     # Ejemplo de SSG
-│   ├── counter.js         # Componente interactivo
-│   ├── _app.js            # App wrapper
-│   ├── _document.js       # HTML document
+│   ├── index.js              - Pagina principal
+│   ├── about.js              - Pagina de ejemplo
+│   ├── ssr-example.js        - Renderizado en servidor
+│   ├── ssg-example.js        - Generacion estatica
+│   ├── counter.js            - Componente interactivo
+│   ├── _app.js
+│   ├── _document.js
 │   └── api/
-│       └── hello.js       # Ruta API de ejemplo
-├── public/                # Archivos estáticos
-├── styles/                # CSS modules
-├── package.json           # Dependencias
-├── next.config.mjs        # Configuración de Next.js
-├── CHAPTER_1.md           # Documentación Capítulo 1
-├── CHAPTER_2.md           # Documentación Capítulo 2
-├── CHAPTER_3.md           # Documentación Capítulo 3
-└── README.md              # Este archivo
+│       └── hello.js
+├── public/                    - Archivos estaticos
+├── styles/                    - CSS
+└── package.json
 ```
 
----
+## Las ramas
 
-## 🔗 Recursos útiles
+El proyecto esta dividido en tres ramas:
+- main: Rama principal, basicamente vacia
+- chapter-1: Proyecto inicial con pagina de inicio
+- chapter-2: Agregue la pagina about y navegacion
+- chapter-3: Las diferentes formas de renderizar (SSR, SSG, componente interactivo)
 
-- [Documentación oficial de Next.js](https://nextjs.org/docs)
-- [Documentación de React](https://react.dev)
-- [W3Schools - React Hooks](https://www.w3schools.com/react/react_hooks.asp)
-- [Next.js Learn - Interactive Tutorial](https://nextjs.org/learn-pages-router)
+Cada rama contiene el codigo anterior mas lo nuevo de esa parte.
 
----
+## Notas
 
-## 💡 Notas de la práctica
+- Usamos Pages Router, no el App Router que es mas nuevo
+- No use TypeScript para simplificar
+- Tampoco use Tailwind, solo CSS basico
+- ESLint esta configurado para atrapar errores
 
-- Cada rama (chapter-1, chapter-2, chapter-3) contiene el código del capítulo respectivo
-- Los archivos `CHAPTER_1.md`, `CHAPTER_2.md` y `CHAPTER_3.md` contienen explicaciones detalladas de cada etapa
-- El proyecto usa **Pages Router** (tradicional) en lugar de App Router (experimental)
-- CSS básico sin frameworks como Tailwind para mantener la simplicidad
-- TypeScript está deshabilitado para enfocarse en los conceptos fundamentales
-
----
-
-## 🎯 Objetivos de aprendizaje
-
-Al completar esta práctica, deberías:
-
-✅ Entender la estructura básica de Next.js  
-✅ Crear múltiples páginas y rutas  
-✅ Navegar entre páginas eficientemente  
-✅ Diferenciar entre SSR, SSG y CSR  
-✅ Usar props y datos en componentes  
-✅ Crear componentes interactivos con React  
-✅ Trabajar con Git y ramas  
-✅ Documentar tu código y cambios  
-
----
-
-## 📝 Licencia
-
-Este proyecto es de propósito educativo como parte de la práctica de Fundamentos de Next.js.
-
----
-
-**Autor**: Luis Valle  
-**Fecha**: Diciembre 2025  
-**Repositorio**: https://github.com/luisvalle7/practica7-next.js
+Eso basicamente es todo lo que hice. Fue interesante ver como Next.js funciona y como maneja todo esto de las rutas y el renderizado.
