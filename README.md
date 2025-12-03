@@ -106,7 +106,6 @@ El proyecto esta dividido en tres ramas:
 Cada rama contiene el codigo anterior mas lo nuevo de esa parte.
 
 ## Notas
-
 - Usamos Pages Router, no el App Router que es mas nuevo
 - No use TypeScript para simplificar
 - Tampoco use Tailwind, solo CSS basico
