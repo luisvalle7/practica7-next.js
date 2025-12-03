@@ -1,7 +1,6 @@
 # Practica 7 - Fundamentos de Next.js
 
 Esta es mi tarea sobre Next.js. La estoy haciendo en partes para aprender mejor como funciona todo.
-
 ## Que hice hasta ahora
 
 Empece instalando Next.js y creando un proyecto basico. Ahora estoy en la segunda parte donde agregue mas paginas y aprendi como navegar entre ellas sin recargar todo.
