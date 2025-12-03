@@ -1,7 +1,5 @@
 # Practica 7 - Fundamentos de Next.js
 
-Bueno, aca esta mi tarea sobre Next.js. La hice en tres partes (ramas diferentes) para ir aprendiendo paso a paso.
-
 ## Que hice
 
 Basicamente cree un proyecto con Next.js para entender como funciona todo. Lo que mas me interesaba era ver como Next.js maneja las rutas automaticamente y las diferentes formas de renderizar contenido.
